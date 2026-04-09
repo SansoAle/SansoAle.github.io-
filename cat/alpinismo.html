@@ -1,0 +1,23 @@
+---
+layout: default
+title: Alpinismo
+---
+
+<h1>🏔️ Alpinismo</h1>
+<section class="grid">
+  {% for post in site.posts %}
+    {% if post.categories contains "alpinismo" %}
+    <a href="{{ post.url }}" class="card">
+      {% if post.cover %}
+      <img src="{{ post.cover }}" alt="{{ post.title }}">
+      {% else %}
+      <div class="no-img">🏔️</div>
+      {% endif %}
+      <div class="card-body">
+        <h2>{{ post.title }}</h2>
+        <p>{{ post.excerpt | strip_html | truncate: 100 }}</p>
+      </div>
+    </a>
+    {% endif %}
+  {% endfor %}
+</section>
